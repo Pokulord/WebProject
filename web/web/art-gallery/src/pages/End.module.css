@@ -1,0 +1,25 @@
+.section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.div {
+    display: flex;
+    align-items: center;
+    gap: 500px; 
+    box-sizing: border-box;
+}
+
+.logo {
+    width: auto;
+    height: 70px;  
+}
+
+.div span {
+    padding-left: 90px;
+    text-align: right;
+    color: #FFFFFF;
+    font-size: 17px;
+}

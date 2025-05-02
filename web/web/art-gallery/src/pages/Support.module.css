@@ -1,0 +1,152 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 90px 250px 70px;
+    gap: 50px;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    color: #FFFFFF;
+    font-size: 38px;
+}
+
+.faq {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.faqItem {
+    background-color: #E0AFA0;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 19px;
+    padding: 1.25rem;
+    border-radius: 16px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.2s;
+}
+
+.faqItem:hover {
+    background-color: #d89a8a;
+}
+
+.arrow {
+    color: #F0D5D5;
+    font-size: 19px;
+}
+
+.form {
+    background-color: #F4F3EE;
+    padding: 2rem;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    color: #161616;
+}
+
+.formTitle {
+    font-size: 24px;
+    font-weight: bold;
+    color: #161616;
+}
+
+.text {
+    font-size: 15px;
+}
+
+.formelement {
+    display: flex;
+    flex-direction: column;
+}
+
+.formelement input, textarea{
+    border: 1px solid #C9C9C9;
+    background-color: #FFFFFF;
+    padding: 0.75rem;
+    border-radius: 16px;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.formelement textarea {
+    max-height: 150px;
+    min-height: 50px;
+    max-width: 100%;
+    min-width: 100%;
+    font-size: 16px;
+}
+
+.formelement input:focus {
+    border-color: #E0AFA0;
+}
+
+.formelement textarea:focus {
+    border-color: #E0AFA0;
+}
+
+.formelement label {
+    color: #161616;
+    font-size: 16px;
+}
+
+.checkboxContainer {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.checkboxContainer input {
+    width: 18px;
+    height: 18px;
+    border: 1px solid #C9C9C9;
+    background-color: #FFFFFF;
+}
+
+.checkboxContainer label {
+    font-size: 15px;
+    color: #161616;
+}
+
+.btn {
+    padding: 0.69rem;
+    width: 100%;
+    background-color: #E0AFA0;
+    color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 19px;
+    font-weight: bold;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); 
+    background-color: #d89a8a;
+}
+
+.formelement input:-webkit-autofill,
+.formelement input:-webkit-autofill:hover,
+.formelement input:-webkit-autofill:focus,
+.formelement input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px #FFFFFF inset !important;
+  -webkit-text-fill-color: #161616 !important;
+  caret-color: #161616 !important;
+  border: 1px solid #C9C9C9 !important;
+  background-clip: text !important;
+}
+
+.formelement input:-webkit-autofill:focus {
+    border-color: #E0AFA0 !important;
+}
