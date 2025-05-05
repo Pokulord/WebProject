@@ -39,7 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'art_gal'
+    'art_gal',
+    'gallery',
+    'rest_framework',
+    'artgal_api'
 ]
 
 MIDDLEWARE = [
