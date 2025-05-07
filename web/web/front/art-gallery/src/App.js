@@ -8,6 +8,16 @@ import Support from './pages/Support';
 import Register from './pages/Register';
 import End from './pages/End';
 
+
+
+// function Get_Pics_list()
+// {
+//   const API_URL = 'http://127.0.0.1:8000/api/';
+//   fetch(API_URL)
+//     .then((response) => response.json())
+//     .then((data) => console.log(data));
+// }
+
 function App() {
   return (
     <>
