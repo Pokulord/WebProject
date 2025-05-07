@@ -5,7 +5,7 @@ from .serializers import Pic_Serializer
 # Create your views here.
 
 class Pic_List(generics.ListCreateAPIView):
-    queryset = Pic_post.objects.all()
+    queryset = Pic_post.objects.filter(Pic_status = "published")
     serializer_class = Pic_Serializer
 
 

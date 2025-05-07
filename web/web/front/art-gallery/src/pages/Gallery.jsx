@@ -38,7 +38,7 @@ function Gallery() {
         const fetchData = async ()=>{
            try
            {
-            const response = await fetch('http://127.0.0.1:8000/api/');
+            const response = await fetch('http://127.0.0.1:8000/api/pics/all');
 
            if (!response.ok){
                 throw new Error(`HTTP err! Status : ${error}`);
@@ -107,8 +107,8 @@ function Gallery() {
                 <div className={style.Card}>
                     {/* <LoadingPics/> */}
                     <Card img={card1} title="Леонардо да Винчи, «Спаситель Мира»" price={45000} items={data} />
-                    {/* <Card img={card2} title="Иван Айвазовский, «Девятый вал»" price={38000} oldPrice={47500} discount={20} />
-                    <Card img={card3} title="Иван Крамской, «Неизвестная»" price={25000} />
+                    {/* <Card img={card2} title="Иван Айвазовский, «Девятый вал»" price={38000} oldPrice={47500} discount={20} items={data} /> */}
+                    {/* <Card img={card3} title="Иван Крамской, «Неизвестная»" price={25000} />
                     <Card img={card4} title="Алессандро Аллори, «Похищение Прозерпины»" price={8400} oldPrice={12000} discount={30}/>
                     <Card img={card5} title="Ян Вермеер, «Девушка с жемчужной серёжкой»" price={5300} /> */}
                 </div>

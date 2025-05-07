@@ -35,9 +35,14 @@ class Pic_post(models.Model):
     Piс_year = models.PositiveSmallIntegerField(default=0)
     Pic_price = models.PositiveSmallIntegerField(default=0)
     Pic_slug = models.SlugField(unique=True)
+    Pic_discount = models.PositiveIntegerField(default=0, blank=True)
     class Meta:
         ordering = ('-Pic_site_publish',)
         verbose_name = "Pictures"
 
     def __str__(self):
         return self.Pic_name
+    
+    def get_price(self):
+       fin_price =  int(self.Pic_price * (100 - self.Pic_discount) / 100) 
+       return fin_price

@@ -18,7 +18,7 @@
     gap: 10px;
 }
 
-.title {
+.title, .pic_au {
     text-align: left;
     font-size: 14px;
     color: #ffffff;
