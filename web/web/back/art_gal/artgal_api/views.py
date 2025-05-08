@@ -38,4 +38,22 @@ class Add_new_Pic(generics.CreateAPIView):
         serializer.is_valid(raise_exception=True)
         source_instance = serializer.save()
         return Response(serializer.data, status= status.HTTP_201_CREATED)
+    
+
+# Продажа картин 
+
+class Sell_pic(generics.UpdateAPIView):
+    queryset = Pic_post.objects.all()
+    serializer_class = Pic_Serializer
+    lookup_field = 'Pic_ID'
+
+    def patch(self, request, *args , **kwargs):
+        instance = self.get_object()
+
+        if instance.How_many > 0:
+            instance.How_many -= 1
+            instance.save()
+
+        serializer = self.get_serializer(instance)
+        return Response(serializer.data, status= status.HTTP_200_OK)
 
