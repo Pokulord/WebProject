@@ -38,7 +38,7 @@ function Gallery() {
         const fetchData = async ()=>{
            try
            {
-            const response = await fetch('http://127.0.0.1:8000/api/pics/all');
+            const response = await fetch('http://127.0.0.1:8000/api/pics/all/discount');
 
            if (!response.ok){
                 throw new Error(`HTTP err! Status : ${error}`);

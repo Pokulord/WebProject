@@ -18,5 +18,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/pics/all',include('artgal_api.urls',namespace='gallery_api')),    
+    path('api/pics/',include('artgal_api.urls',namespace='gallery_api')),    
 ]
