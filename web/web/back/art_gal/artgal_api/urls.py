@@ -1,10 +1,12 @@
 from django.urls import path
-from .views import Pic_List, Pic_detail, All_discount_pics
+from .views import Ready_to_sold_Pic_List, Pic_detail, All_discount_pics, Add_new_Pic
 
 app_name = 'artgal_api'
 
 urlpatterns = [
-    path('all/',Pic_List.as_view(), name = 'pic_list_create'),
+    path('ready/',Ready_to_sold_Pic_List.as_view(), name = 'pic_list_create'),
     path('<int:pk>/', Pic_detail.as_view(), name = "pic_info"),
-    path('all/discount/', All_discount_pics.as_view(), name = "dicount_pics" )
+    path('ready/discount/', All_discount_pics.as_view(), name = "dicount_pics" ),
+    path('add-new-pic/', Add_new_Pic.as_view(), name = "add_new_pic")
+    # path('all/the-most-sold')
 ]

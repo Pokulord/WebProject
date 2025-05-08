@@ -1,5 +1,5 @@
 from django.contrib import admin
-from gallery.models import Pic_post, Artists
+from gallery.models import Pic_post, Artists, Sold_pics
 # Register your models here.
 
 class PicAdmin(admin.ModelAdmin):
@@ -12,3 +12,5 @@ class PicAdmin(admin.ModelAdmin):
 
 admin.site.register(Pic_post,PicAdmin)
 admin.site.register(Artists)
+admin.site.register(Sold_pics)
+
