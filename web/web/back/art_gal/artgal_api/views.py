@@ -14,7 +14,8 @@ from django.db.models import Count
 
 ## Блок с выводом
 
-# Вывод всех картин
+
+# Вывод всех картин, готовых к продаже
 
 class Ready_to_sold_Pic_List(generics.ListAPIView):
     queryset = Pic_post.objects.filter(Pic_status = "published", How_many__gt=0 )

@@ -21,51 +21,46 @@ import Card from "./Card";
 
 
 function Gallery() {
-    // Get_Pics_list();
-    // const PicLoading = LoadingPics(Card);
-    // const [picState, setPicState] = useState({
-    //     loading : false,
-    //     pics: null,
-    // });
     const [data, setData] = useState([]);
-    const [loading, setLoading]  = useState(true);
+    const [readydata, setReady] = useState([]);
+    const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
+    const API_URLS = ['http://127.0.0.1:8000/api/pics/ready/discount',
+        'http://127.0.0.1:8000/api/pics/ready/'
+    ];
 
+    const fetchData = async () => {
+        try {
+            const [response1,response2] = await Promise.all(API_URLS.map(url => fetch(url)));
 
+            if (!response1.ok) {
+                throw new Error(`HTTP err! Status : ${response.status}`);
+            }
+
+            const json1 = await response1.json();
+            const json2 = await response2.json();
+            console.log("Данные 1");
+            console.log(json1);
+            setData(json1);
+            setReady(json2);
+        } catch (err) {
+            setError(err.message);
+        } finally {
+            setLoading(false);
+        }
+    };
 
     useEffect(() => {
-        const fetchData = async ()=>{
-           try
-           {
-            const response = await fetch('http://127.0.0.1:8000/api/pics/ready/discount');
+        fetchData(); 
+    }, []);
 
-           if (!response.ok){
-                throw new Error(`HTTP err! Status : ${error}`);
-           }
-
-           const jsonData = await response.json();
-           console.log("Данные 1")
-           console.log(jsonData);
-           setData(jsonData);
-
-           } catch (err) {
-            setError(err.message);
-           } finally {
-            setLoading(false);
-           }
-        };
-
-        fetchData();
-    } , []);
-
-        useEffect(() => {
+    useEffect(() => {
         console.log('data changed', data);
-    }, [data])
+    }, [data]);
 
-
-    if (loading) return <div>Загрузка!</div>
-    if (error) return <div>Ошибка! : {error}</div>
+    if (loading) return <div>Загрузка!</div>;
+    if (error) return <div>Ошибка! : {error}</div>;
     return (
         <section>
             <div
@@ -108,24 +103,31 @@ function Gallery() {
                 <div className={style.Card}>
                     {data.map((item) => (
                         <div key={item.Pic_ID} className={style.Card}>
-                    <Card 
-                    img = {item.Pic_image}
-                    author = {item.pic_au_name}
-                    name = {item.Pic_name}
-                    slug = {item.Pic_slug}
-                    discount={item.Pic_discount}
-                    final_price = {item.final_price}
-                    orig_price = {item.Pic_price}/>
-                </div>
+                            <Card
+                                img={item.Pic_image}
+                                author={item.pic_au_name}
+                                name={item.Pic_name}
+                                slug={item.Pic_slug}
+                                discount={item.Pic_discount}
+                                final_price={item.final_price}
+                                orig_price={item.Pic_price} />
+                        </div>
                     ))}
                 </div>
-                <span className={style.title_1}  style={{ paddingTop: '40px' }}>Хиты продаж</span>
+                <span className={style.title_1} style={{ paddingTop: '40px' }}>Наши товары</span>
                 <div className={style.Card}>
-                    {/* <Card img={card6} title="Анри Руссо, «Спящая цыганка»" price={13500} oldPrice={17000} discount={20} />
-                    <Card img={card7} title="Карл Брюллов, «Девушка, собирающая виноград»" price={8400} />
-                    <Card img={card8} title="Рене Магритт, «Сын человеческий»" price={40000} />
-                    <Card img={card9} title="Илья Репин, «Запорожцы с Кавказа»" price={40000} />
-                    <Card img={card10} title="Леонардо да Винчи, «Дама с горностаем»" price={2900} oldPrice={3500} discount={20}/> */}
+                    {readydata.map((item) => (
+                        <div key={item.Pic_ID} className={style.Card}>
+                            <Card
+                                img={item.Pic_image}
+                                author={item.pic_au_name}
+                                name={item.Pic_name}
+                                slug={item.Pic_slug}
+                                discount={item.Pic_discount}
+                                final_price={item.final_price}
+                                orig_price={item.Pic_price} />
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>
