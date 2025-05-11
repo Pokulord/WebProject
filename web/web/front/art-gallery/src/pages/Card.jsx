@@ -2,34 +2,32 @@ import React from "react";
 import style from './Card.module.css';
 import { useState } from "react";
 
-function Card({ img, title, price, oldPrice, discount, imgheight, items }) {
+function Card({img, author, name, slug, discount, final_price, orig_price, imgheight}) {
     console.log('GOT')
-    console.log(items)
-    if (!items && Array.isArray(items) == 0) {
+    if (!name) {
         return (
             <div>Нечего взять!</div>
         )
     }
     return (
         <>
-            {items.map((item, index) => (
+            
                 <div className={style.card}>
-                    <img src={item.Pic_image} alt={title} className={style.image} style={{ height: imgheight }} />
+                    <img src={img} alt={name} className={style.image} style={{ height: imgheight }} />
                     <div className={style.content}>
-                        <span className={style.pic_au}>{item.pic_au_name}</span>
-                        <a className={style.title} href={"/gallery/" + item.Pic_slug}>{item.Pic_name}</a>
+                        <span className={style.pic_au}>{author}</span>
+                        <a className={style.title} href={"/gallery/" + slug}>{name}</a>
                         <div className={style.priceBlock}>
-                            <span className={style.price}>{item.final_price} ₽</span>
-                            {item.Pic_discount > 0 && (
+                            <span className={style.price}>{final_price} ₽</span>
+                            {discount > 0 && (
                                 <>
-                                    <span className={style.oldPrice}>{item.Pic_price}</span>
-                                    <span className={style.discount}>-{item.Pic_discount}%</span>
+                                    <span className={style.oldPrice}>{orig_price}</span>
+                                    <span className={style.discount}>-{discount}%</span>
                                 </>
                             )}
                         </div>
                     </div>
                 </div>
-            ))}
         </>
 
     );

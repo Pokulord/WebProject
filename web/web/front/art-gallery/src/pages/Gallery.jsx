@@ -63,6 +63,7 @@ function Gallery() {
         console.log('data changed', data);
     }, [data])
 
+
     if (loading) return <div>Загрузка!</div>
     if (error) return <div>Ошибка! : {error}</div>
     return (
@@ -105,12 +106,18 @@ function Gallery() {
             <div className={style.contentCard}>
                 <span className={style.title_1}>Акции</span>
                 <div className={style.Card}>
-                    {/* <LoadingPics/> */}
-                    <Card img={card1} title="Леонардо да Винчи, «Спаситель Мира»" price={45000} items={data} />
-                    {/* <Card img={card2} title="Иван Айвазовский, «Девятый вал»" price={38000} oldPrice={47500} discount={20} items={data} /> */}
-                    {/* <Card img={card3} title="Иван Крамской, «Неизвестная»" price={25000} />
-                    <Card img={card4} title="Алессандро Аллори, «Похищение Прозерпины»" price={8400} oldPrice={12000} discount={30}/>
-                    <Card img={card5} title="Ян Вермеер, «Девушка с жемчужной серёжкой»" price={5300} /> */}
+                    {data.map((item) => (
+                        <div key={item.Pic_ID} className={style.Card}>
+                    <Card 
+                    img = {item.Pic_image}
+                    author = {item.pic_au_name}
+                    name = {item.Pic_name}
+                    slug = {item.Pic_slug}
+                    discount={item.Pic_discount}
+                    final_price = {item.final_price}
+                    orig_price = {item.Pic_price}/>
+                </div>
+                    ))}
                 </div>
                 <span className={style.title_1}  style={{ paddingTop: '40px' }}>Хиты продаж</span>
                 <div className={style.Card}>
