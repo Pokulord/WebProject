@@ -57,7 +57,7 @@ class Pic_post(models.Model):
     
 
 class Sold_pics(models.Model):
-    Sold_id = models.AutoField(primary_key=True, default= 0)
+    Sold_id = models.AutoField(primary_key=True)
     Sold_pic = models.ForeignKey(Pic_post, verbose_name= 'Sold_pic', related_name= 'sold_pic', on_delete=models.PROTECT, null= True)
     Sold_price = models.PositiveSmallIntegerField(default=0)
     Sold_date = models.DateTimeField(default=timezone.now)

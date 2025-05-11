@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from gallery.models import Pic_post
+from gallery.models import Pic_post , Sold_pics
 
 
 ## 'Pic_ID','Pic_name','Pic_author','Pic_status','Pic_contain','Pic_site_publish','Pic_image','Piс_year','Pic_price', 'Pic_slug', 'pic_au_name', 'Pic_discount','final_price','How_many
@@ -16,3 +16,9 @@ class Pic_Serializer(serializers.ModelSerializer):
     
     def get_final_price(self, obj):
         return obj.get_price()
+    
+
+class Sold_Ser(serializers.ModelSerializer):
+    class Meta:
+        model = Sold_pics
+        fields = ('Sold_id', 'Sold_pic', 'Sold_price', 'Sold_date')
