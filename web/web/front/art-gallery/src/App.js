@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Scroll from './pages/Scroll';
 import HomeNav from './layout/HomeNav';
 import Main from './pages/Main';
+import AuthNav from '../src/layout/AuthNav';
 import Gallery from './pages/Gallery';
 import Support from './pages/Support';
 import Register from './pages/Register';
@@ -22,6 +23,7 @@ function App() {
   return (
     <>
       <Scroll />
+      <AuthNav />
       <HomeNav />
       <Routes>
         <Route path="/" element={<Main />} />

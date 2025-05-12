@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import logo from '../img/logo.png';
-import style from './HomeNav.module.css';
+import style from './AuthNav.module.css';
 import vector from '../svg/Vector.svg';
 import search from '../svg/Search.svg';
 
 
-function HomeNav() {
+function AuthNav() {
     return (
         <header className={style.header}>
             <nav>
@@ -25,7 +25,8 @@ function HomeNav() {
                             <img className={style.search_ico} src={search} />
                         </div>
                         <Link to="/login"><img className={style.svg} src={vector} /></Link>
-                        <Link to="/register"><button className={style.btn}>Регистрация</button></Link>
+                        <span className={style.username}>UserName</span>
+                        <span className={style.logout}>Выйти</span>
                     </div>
                 </div>
             </nav>
@@ -33,4 +34,4 @@ function HomeNav() {
     );
 }
 
-export default HomeNav;
+export default AuthNav;

@@ -6,7 +6,7 @@ import Card from "./Card";
 import card11 from '../img/card11.png'
 import card12 from '../img/card12.png'
 import card13 from '../img/card13.png'
-import mainend from '../img/mainend.png'
+import mainend from '../img/mainend.png';
 import {useState, useEffect} from 'react';
 
 
