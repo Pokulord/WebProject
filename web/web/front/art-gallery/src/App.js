@@ -8,6 +8,7 @@ import Gallery from './pages/Gallery';
 import Support from './pages/Support';
 import Register from './pages/Register';
 import End from './pages/End';
+import Login from './pages/Login';
 
 
 
@@ -30,6 +31,7 @@ function App() {
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/support" element={<Support />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
       <End />
     </>
