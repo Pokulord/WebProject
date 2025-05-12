@@ -7,6 +7,7 @@ from gallery.models import Pic_post , Sold_pics
 class Pic_Serializer(serializers.ModelSerializer):
     pic_au_name = serializers.SerializerMethodField()
     final_price = serializers.SerializerMethodField()
+    genre_name = serializers.SerializerMethodField()
     class Meta:
         model = Pic_post
         fields = ('__all__')
@@ -14,8 +15,12 @@ class Pic_Serializer(serializers.ModelSerializer):
     def get_pic_au_name(self,obj):
         return [artist.name for artist in obj.Pic_author.all()]
     
+    def get_genre_name(self, obj):
+        return [genre.genre_name for genre in obj.Pic_genre.all()]
+    
     def get_final_price(self, obj):
         return obj.get_price()
+    
     
 
 class Sold_Ser(serializers.ModelSerializer):

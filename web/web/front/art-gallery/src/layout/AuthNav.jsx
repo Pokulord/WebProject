@@ -6,7 +6,7 @@ import vector from '../svg/Vector.svg';
 import search from '../svg/Search.svg';
 
 
-function AuthNav() {
+function AuthNav({username}) {
     return (
         <header className={style.header}>
             <nav>
@@ -25,7 +25,7 @@ function AuthNav() {
                             <img className={style.search_ico} src={search} />
                         </div>
                         <Link to="/login"><img className={style.svg} src={vector} /></Link>
-                        <span className={style.username}>UserName</span>
+                        <span className={style.username}>{username}</span>
                         <span className={style.logout}>Выйти</span>
                     </div>
                 </div>

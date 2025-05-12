@@ -13,6 +13,19 @@ STATUSES = (
 )
 
 
+
+class Genres(models.Model):
+    genre_id = models.AutoField(primary_key= True)
+    genre_name = models.CharField(unique=True , max_length= 100)
+
+
+    class Meta: 
+        verbose_name = "Genres"
+
+
+    def __str__(self):
+        return self.genre_name
+
 class Artists(models.Model):
     actor_id = models.AutoField(primary_key=True)
     name = models.CharField("Художник", max_length=100)
@@ -43,6 +56,7 @@ class Pic_post(models.Model):
     Pic_price = models.PositiveSmallIntegerField(default=0)
     Pic_slug = models.SlugField(unique=True)
     Pic_discount = models.PositiveIntegerField(default=0, blank=True)
+    Pic_genre = models.ManyToManyField(Genres, verbose_name='Pic_genre', related_name= 'pic_genre')
     How_many = models.PositiveSmallIntegerField(default=0)
     class Meta:
         ordering = ('-Pic_site_publish',)
