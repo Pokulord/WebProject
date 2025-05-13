@@ -2,7 +2,7 @@ import React from "react";
 import style from './Card.module.css';
 import { useState } from "react";
 
-function Card({img, author, name, slug, discount, final_price, orig_price, imgheight}) {
+function Card({img, author, name, slug, discount, final_price, orig_price, imgSize = 'md'}) {
     console.log('GOT')
     if (!name) {
         return (
@@ -13,7 +13,7 @@ function Card({img, author, name, slug, discount, final_price, orig_price, imghe
         <>
             
                 <div className={style.card}>
-                    <img src={img} alt={name} className={style.image} style={{ height: imgheight }} />
+                     <img src={img} alt={name} className={`${style.image} ${style[imgSize]}`} />
                     <div className={style.content}>
                         <span className={style.pic_au}>{author}</span>
                         <a className={style.title} href={"/gallery/" + slug}>{name}</a>

@@ -8,13 +8,13 @@
 .div {
     display: flex;
     align-items: center;
-    gap: 500px; 
+    gap: 500px;
     box-sizing: border-box;
 }
 
 .logo {
     width: auto;
-    height: 70px;  
+    height: 70px;
 }
 
 .div span {
@@ -22,4 +22,158 @@
     text-align: right;
     color: #FFFFFF;
     font-size: 17px;
+}
+
+@media (min-width: 1150px) and (max-width: 1250px) {
+
+    .div {
+        gap: 480px;
+    }
+
+    .div span {
+        padding-left: 0;
+    }
+
+}
+
+@media (min-width: 1000px) and (max-width: 1149px) {
+
+    .div {
+        gap: 350px;
+    }
+
+    .div span {
+        padding-left: 0;
+        font-size: 16px;
+    }
+
+}
+
+@media (min-width: 901px) and (max-width: 999px) {
+
+    .section {
+        margin: 10px 0;
+    }
+
+    .div {
+        gap: 270px;
+    }
+
+    .logo {
+        height: 65px;
+    }
+
+    .div span {
+        padding-left: 0;
+        font-size: 15px;
+    }
+
+
+}
+
+@media (min-width: 768px) and (max-width: 900px) {
+
+    .section {
+        margin: 10px 0;
+    }
+
+    .div {
+        gap: 200px;
+    }
+
+    .logo {
+        height: 55px;
+    }
+
+    .div span {
+        padding-left: 0;
+        font-size: 15px;
+    }
+
+}
+
+@media (min-width: 700px) and (max-width: 767px) {
+
+    .section {
+        margin: 10px 0;
+    }
+
+    .div {
+        gap: 150px;
+    }
+
+    .logo {
+        height: 55px;
+    }
+
+    .div span {
+        padding-left: 0;
+        font-size: 14px;
+    }
+
+}
+
+@media (min-width: 600px) and (max-width: 699px) {
+
+    .section {
+        margin: 10px 0;
+    }
+
+    .div {
+        gap: 100px;
+    }
+
+    .logo {
+        height: 50px;
+    }
+
+    .div span {
+        padding-left: 0;
+        font-size: 13px;
+    }
+
+}
+
+@media (min-width: 518px) and (max-width: 599px) {
+
+    .section {
+        margin: 10px 0;
+    }
+
+    .div {
+        gap: 30px;
+    }
+
+    .logo {
+        height: 50px;
+    }
+
+    .div span {
+        text-align: center;
+        padding-left: 0;
+        font-size: 13px;
+    }
+
+}
+
+@media (min-width: 350px) and (max-width: 517px) {
+
+    .section {
+        margin: 10px 0;
+    }
+
+    .div {
+        gap: 0px;
+    }
+
+    .logo {
+        height: 45px;
+    }
+
+    .div span {
+        text-align: center;
+        padding: 0 10px;
+        font-size: 12px;
+    }
+
 }

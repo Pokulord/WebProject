@@ -53,6 +53,15 @@
     gap: 50px;
 }
 
+.stats > div {
+    display: inline-flex;
+    flex-direction: column;
+    width: fit-content;
+    padding: 0;
+    margin: 0;
+    align-items: flex-start;
+}
+
 .stats p {
     margin: 0 0 5px;
     font-size: 34px;
@@ -66,14 +75,12 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    object-fit: contain;
     background-color: #E0AFA0;
     width: 100%;
     height: 80px;
 }
 
-.logoSection {
-    object-fit: contain
-}
 
 .logoSection img:nth-child(1) {
     height: 28px;
@@ -98,22 +105,530 @@
 .contentCard {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 30px;
-    padding-bottom: 50px;
+    padding: 70px 30px 50px 30px;
 }
 
 .title_1 {
     display: flex;
     justify-content: center;
-    padding-top: 70px;
     color: #FFFFFF;
     font-size: 32px;
     font-weight: bold;
+}
+
+.title_2 {
+    display: flex;
+    justify-content: center;
+    color: #FFFFFF;
+    font-size: 32px;
+    font-weight: bold;
+    padding-top: 40px;
 }
 
 .Card {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 40px;
+}
+
+@media (min-width: 1200px) and (max-width: 1300px) {
+
+    .hero {
+        height: 600px;
+    }
+
+    .overlay {
+        padding: 0 90px;
+        gap: 30px
+    }
+
+    .title {
+        font-size: 52px;
+    }
+
+    .description {
+        padding-right: 90px;
+        gap: 15px;
+    }
+
+    .stats p {
+        font-size: 32px;
+    }
+
+    .stats span {
+        font-size: 17px;
+    }
+
+}
+
+@media (min-width: 1000px) and (max-width: 1199px) {
+
+    .hero {
+        height: 550px;
+    }
+
+    .overlay {
+        padding: 0 50px;
+        gap: 30px
+    }
+
+    .title {
+        font-size: 44px;
+    }
+
+    .description {
+        padding-right: 50px;
+        font-size: 17px;
+        gap: 15px;
+        line-height: 1.4;
+    }
+
+    .stats {
+        gap: 45px;
+    }
+
+    .stats p {
+        font-size: 28px;
+    }
+
+    .stats span {
+        font-size: 16px;
+    }
+
+    .logoSection {
+        height: 70px;
+    }
+
+    .logoSection img:nth-child(1) {
+        height: 24px;
+    }
+
+    .logoSection img:nth-child(2) {
+        height: 17px;
+    }
+
+    .logoSection img:nth-child(3) {
+        height: 38px;
+    }
+
+    .logoSection img:nth-child(4) {
+        height: 38px;
+    }
+
+    .logoSection img:nth-child(5) {
+        height: 60px;
+    }
+
+    .contentCard {
+        padding: 50px 30px 40px 30px;
+    }
+
+    .title_1 {
+        font-size: 30px;
+    }
+
+    .title_2 {
+        font-size: 30px;
+        padding-top: 30px;
+    }
+
+}
+
+@media (min-width: 900px) and (max-width: 999px) {
+
+    .hero {
+        height: 550px;
+    }
+
+    .overlay {
+        padding: 0 50px;
+        gap: 25px
+    }
+
+    .title {
+        font-size: 42px;
+    }
+
+    .description {
+        padding-right: 50px;
+        font-size: 16px;
+        gap: 15px;
+        line-height: 1.4;
+    }
+
+    .stats {
+        gap: 40px;
+    }
+
+    .stats p {
+        font-size: 26px;
+    }
+
+    .stats span {
+        font-size: 15px;
+    }
+
+    .logoSection {
+        height: 65px;
+    }
+
+    .logoSection img:nth-child(1) {
+        height: 20px;
+    }
+
+    .logoSection img:nth-child(2) {
+        height: 15px;
+    }
+
+    .logoSection img:nth-child(3) {
+        height: 32px;
+    }
+
+    .logoSection img:nth-child(4) {
+        height: 32px;
+    }
+
+    .logoSection img:nth-child(5) {
+        height: 53px;
+    }
+
+    .contentCard {
+        padding: 40px 30px 40px 30px;
+    }
+
+    .title_1 {
+        font-size: 28px;
+    }
+
+    .title_2 {
+        font-size: 28px;
+        padding-top: 25px;
+    }
+
+}
+
+@media (min-width: 768px) and (max-width: 899px) {
+
+    .hero {
+        height: 500px;
+    }
+
+    .overlay {
+        padding: 0 30px;
+        gap: 25px
+    }
+
+    .title {
+        font-size: 38px;
+    }
+
+    .description {
+        padding-right: 40px;
+        font-size: 15px;
+        gap: 15px;
+        line-height: 1.4;
+    }
+
+    .stats {
+        gap: 35px;
+    }
+
+    .stats p {
+        font-size: 24px;
+    }
+
+    .stats span {
+        font-size: 15px;
+    }
+
+    .logoSection {
+        height: 65px;
+    }
+
+    .logoSection img:nth-child(1) {
+        height: 20px;
+    }
+
+    .logoSection img:nth-child(2) {
+        height: 15px;
+    }
+
+    .logoSection img:nth-child(3) {
+        height: 32px;
+    }
+
+    .logoSection img:nth-child(4) {
+        height: 32px;
+    }
+
+    .logoSection img:nth-child(5) {
+        height: 53px;
+    }
+
+    .contentCard {
+        padding: 40px 30px 40px 30px;
+        gap: 20px;
+    }
+
+    .Card {
+        gap: 30px;
+    }
+
+    .title_1 {
+        font-size: 27px;
+    }
+
+    .title_2 {
+        font-size: 27px;
+        padding-top: 25px;
+    }
+
+}
+
+@media (min-width: 600px) and (max-width: 767px) {
+
+    .hero {
+        height: 500px;
+    }
+
+    .overlay {
+        padding: 0 20px;
+        gap: 25px
+    }
+
+    .title {
+        font-size: 30px;
+    }
+
+    .description {
+        padding-right: 20px;
+        font-size: 14px;
+        gap: 15px;
+        line-height: 1.4;
+    }
+
+    .stats {
+        gap: 35px;
+    }
+
+    .stats div {
+        width: 150px;
+    }
+
+    .stats p {
+        font-size: 22px;
+        margin: 0;
+    }
+
+    .stats span {
+        font-size: 14px;
+    }
+
+    .logoSection {
+        height: 55px;
+    }
+
+    .logoSection img:nth-child(1) {
+        height: 16px;
+    }
+
+    .logoSection img:nth-child(2) {
+        height: 12px;
+    }
+
+    .logoSection img:nth-child(3) {
+        height: 26px;
+    }
+
+    .logoSection img:nth-child(4) {
+        height: 26px;
+    }
+
+    .logoSection img:nth-child(5) {
+        height: 47px;
+    }
+
+    .contentCard {
+        padding: 40px 30px 40px 30px;
+        gap: 20px;
+    }
+
+    .Card {
+        gap: 30px;
+    }
+
+    .title_1 {
+        font-size: 26px;
+    }
+
+    .title_2 {
+        font-size: 26px;
+        padding-top: 20px;
+    }
+
+}
+
+@media (min-width: 451px) and (max-width: 599px) {
+
+    .hero {
+        height: 350px;
+    }
+
+    .overlay {
+        align-items: center;
+        padding: 0 10px;
+        gap: 15px;
+    }
+
+    .title {
+        font-size: 20px;
+    }
+
+    .description {
+        padding-right: 0px;
+        font-size: 14px;
+        gap: 15px;
+        line-height: 1.4;
+    }
+
+    .stats {
+        gap: 10px;
+    }
+
+    .stats p {
+        font-size: 18px;
+        margin: 0;
+    }
+
+    .stats span {
+        font-size: 13px;
+    }
+
+    .logoSection {
+        height: 55px;
+    }
+
+    .logoSection img:nth-child(1) {
+        height: 14px;
+    }
+
+    .logoSection img:nth-child(2) {
+        height: 10px;
+    }
+
+    .logoSection img:nth-child(3) {
+        height: 20px;
+    }
+
+    .logoSection img:nth-child(4) {
+        height: 20px;
+    }
+
+    .logoSection img:nth-child(5) {
+        height: 35px;
+    }
+
+    .contentCard {
+        padding: 30px 0px 30px 0px;
+        gap: 20px;
+    }
+
+    .Card {
+        gap: 20px;
+    }
+
+    .title_1 {
+        font-size: 24px;
+    }
+
+    .title_2 {
+        font-size: 24px;
+        padding-top: 20px;
+    }
+
+}
+
+@media (min-width: 350px) and (max-width: 450px) {
+
+    .hero {
+        height: 300px;
+    }
+
+    .overlay {
+        align-items: center;
+        padding: 0 10px;
+        gap: 15px;
+    }
+
+    .title {
+        font-size: 17px;
+    }
+
+    .description {
+        padding-right: 0px;
+        font-size: 13px;
+        gap: 10px;
+        line-height: 1.4;
+    }
+
+    .stats {
+        gap: 10px;
+    }
+
+    .stats p {
+        font-size: 16px;
+        margin: 0;
+    }
+
+    .stats span {
+        font-size: 12px;
+    }
+
+    .logoSection {
+        height: 55px;
+    }
+
+    .logoSection img:nth-child(1) {
+        height: 12px;
+    }
+
+    .logoSection img:nth-child(2) {
+        height: 8px;
+    }
+
+    .logoSection img:nth-child(3) {
+        height: 18px;
+    }
+
+    .logoSection img:nth-child(4) {
+        height: 18px;
+    }
+
+    .logoSection img:nth-child(5) {
+        height: 30px;
+    }
+
+    .contentCard {
+        padding: 30px 0px 30px 0px;
+        gap: 20px;
+    }
+
+    .Card {
+        gap: 20px;
+    }
+
+    .title_1 {
+        font-size: 22px;
+    }
+
+    .title_2 {
+        font-size: 22px;
+        padding-top: 20px;
+    }
+
 }

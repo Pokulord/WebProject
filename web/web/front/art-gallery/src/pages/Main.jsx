@@ -44,7 +44,7 @@ function Main() {
         <section className={style.Content}>
             <div className={style.main} style={{ backgroundImage: `url(${logo})` }}>
                 <span className={style.title}>Откройте для себя сокровища искусства, созвучные вашему вкусу</span>
-                <span className={style.text}>Начать исследование</span>
+                <Link to="/gallery" className={style.text}>Начать исследование</Link>
             </div>
             <div className={style.cardContent}>
                 <div className={style.textContent}>
@@ -67,9 +67,9 @@ function Main() {
             <div className={style.regContent}>
                 <span style={{ fontSize: '30px', color: '#FFFFFF' }}>Кратчайший путь к искусству</span>
                 <span style={{ fontSize: '16px', color: '#FFFFFF' }}>Вдохните Жизнь В Свой Дом – Вас Ждут Шедевры</span>
-                <Link to="/register" className={style.button}>Регистрация</Link>
+                {/* <Link to="/register" className={style.button}>Регистрация</Link> */}
             </div>
-            <img className={style.imgEnd} src={mainend} alt="mainend" />
+            {/* <img className={style.imgEnd} src={mainend} alt="mainend" /> */}
         </section>
     );
 }

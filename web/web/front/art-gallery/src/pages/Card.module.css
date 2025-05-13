@@ -1,15 +1,22 @@
 .card {
     display: flex;
     flex-direction: column;
-    border-radius: 16px;
     gap: 7px;
     width: 200px;
 }
 
 .image {
+    border-radius: 12px;
     width: 100%;
-    height: 200px;
     object-fit: cover;
+}
+
+.md {
+    height: 200px;
+}
+
+.lg {
+    height: 250px;
 }
 
 .content {
@@ -18,11 +25,23 @@
     gap: 10px;
 }
 
-.title, .pic_au {
+.title,
+.pic_au {
     text-align: left;
     font-size: 14px;
     color: #ffffff;
     line-height: 1.4;
+}
+
+.content a {
+    display: inline-block;
+    width: fit-content;
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.content a:hover {
+    color: #E0AFA0;
 }
 
 .priceBlock {
@@ -49,4 +68,92 @@
     padding: 4px 10px;
     font-size: 12px;
     box-sizing: border-box;
+}
+
+@media (min-width: 768px) and (max-width: 949px) {
+
+    .card {
+        width: 150px;
+    }
+
+    .content {
+        gap: 8px;
+    }
+
+    .md {
+        height: 150px;
+    }
+
+    .lg {
+        height: 200px;
+    }
+
+    .pic_au {
+        font-size: 13px;
+    }
+
+    .title {
+        font-size: 13px;
+    }
+
+    .priceBlock {
+        gap: 6px;
+    }
+
+    .price {
+        font-size: 15px;
+    }
+
+    .oldPrice {
+        font-size: 15px;
+    }
+
+    .discount {
+        font-size: 10px;
+        padding: 3px 7px;
+    }
+}
+
+@media (min-width: 350px) and (max-width: 767px) {
+
+    .card {
+        width: 150px;
+    }
+
+    .content {
+        gap: 8px;
+    }
+
+    .md {
+        height: 150px;
+    }
+
+    .lg {
+        height: 200px;
+    }
+
+    .pic_au {
+        font-size: 12px;
+    }
+
+    .title {
+        font-size: 12px;
+    }
+
+    .priceBlock {
+        gap: 10px;
+    }
+
+    .price {
+        font-size: 14px;
+    }
+
+    .oldPrice {
+        font-size: 14px;
+    }
+
+    .discount {
+        font-size: 9px;
+        padding: 3px 6px;
+    }
 }
