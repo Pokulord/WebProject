@@ -4,9 +4,26 @@ import logo from '../img/logo.png';
 import style from './AuthNav.module.css';
 import vector from '../svg/Vector.svg';
 import search from '../svg/Search.svg';
+import axios from "axios";
 
 
-function AuthNav({username}) {
+function AuthNav({ username }) {
+    const handleLogout = async () => {
+        try {
+            const refreshToken = localStorage.getItem("refreshToken");
+            console.log("Token" , refreshToken)
+            if (refreshToken) {
+                const token = localStorage.getItem("accessToken");
+                await axios.post("http://localhost:8000/api/user/logout/", { "refresh": refreshToken }, {headers : {"Authorization": `Bearer ${token}`}})
+                localStorage.removeItem("accessToken");
+                localStorage.removeItem("refreshToken");
+                window.location.assign("http://localhost:3000/")
+            }
+        }
+        catch (error) {
+            console.log("Ошибка при деавторизации!", error)
+        }
+    }
     return (
         <header className={style.header}>
             <nav>
@@ -26,7 +43,7 @@ function AuthNav({username}) {
                         </div>
                         <Link to="/login"><img className={style.svg} src={vector} /></Link>
                         <span className={style.username}>{username}</span>
-                        <span className={style.logout}>Выйти</span>
+                        <button onClick={handleLogout} className={style.logout}>Выйти</button>
                     </div>
                 </div>
             </nav>

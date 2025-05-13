@@ -37,7 +37,7 @@ function Login() {
             setSuccessMessage("Успешный вход!")
             localStorage.setItem("accessToken" , response.data.tokens.access);
             localStorage.setItem("refreshToken", response.data.tokens.refresh);
-            location.reload();
+            window.location.assign('http://localhost:3000/')
         }
         catch (error) {
             console.log("Ошибка в процессе входа!", error.response?.data);

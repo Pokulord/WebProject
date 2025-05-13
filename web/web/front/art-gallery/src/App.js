@@ -16,19 +16,17 @@ import axios from 'axios';
 
 
 function App() {
-  const [username , setUsername ] = useState("");
+  const [username, setUsername] = useState("");
   const [isLoggedIn, setLoggedIn] = useState(false);
 
-  useEffect (() => {
+  useEffect(() => {
     const checkLoggedInUser = async () => {
-      try 
-      {
+      try {
         const token = localStorage.getItem("accessToken");
-        if (token)
-        {
+        if (token) {
           const config = {
-            headers : {
-              "Authorization" : `Bearer ${token}`
+            headers: {
+              "Authorization": `Bearer ${token}`
             }
           };
           const response = await axios.get("http://localhost:8000/api/user/info/", config);
@@ -36,8 +34,7 @@ function App() {
           setUsername(response.data.username)
         }
 
-        else 
-        {
+        else {
           setLoggedIn(false);
           setUsername("");
         }
@@ -49,14 +46,16 @@ function App() {
     };
     checkLoggedInUser();
   }, [])
-  
+
+
+
   return (
     <>
       <Scroll />
       {isLoggedIn ? (
-        <AuthNav username = {username} />
+        <AuthNav username={username} />
       ) :
-       (  <HomeNav />)}
+        (<HomeNav />)}
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/gallery" element={<Gallery />} />
