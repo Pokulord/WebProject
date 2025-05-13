@@ -1,7 +1,10 @@
 import React, { use } from "react";
 import style from './Register.module.css';
 import { useState } from "react";
-import axios from 'axios'
+import axios from 'axios';
+import Login from "./Login";
+import { Link } from "react-router";
+
 
 function Register() {
     const [formData, setFormData] = useState({
@@ -108,7 +111,8 @@ function Register() {
                 <button type="submit" disabled = {isLoading} className={style.button} onClick={handleSubmit} >Регистрация</button>
                 {error && <p style={{color: "red"}}>{error}</p>}
                 {successMessage && <p style={{color : "green"}} >{successMessage}</p>}
-                <span className={style.text} >У вас есть аккаунт?<span className={style.color}>Войти</span></span>
+                <span className={style.text} >У вас есть аккаунт?<span className={style.color}>
+                    <Link to="/login" className={style.text}>Войти</Link> </span></span>
             </form>
         </section>
     );

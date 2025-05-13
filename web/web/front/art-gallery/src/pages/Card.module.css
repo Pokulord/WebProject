@@ -25,8 +25,51 @@
     gap: 10px;
 }
 
+
+
+.pic_minus_but
+{
+    width:35px;
+    border:2px solid #b8b8b8;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.pic_count_input
+{
+    width: 60px;
+    border: 2px solid #b8b8b8;
+    text-align: center;
+    border-right: none;
+    border-left: none;
+}
+
+.pic_plus_but
+{
+    width:35px;
+    border:2px solid #b8b8b8;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.add_to_cart_but
+{
+    width: 50px;
+    margin-left: 5px;
+    border: 1px solid ;
+    border-radius: 5px;
+    background-color:rgb(32, 161, 60);
+    color: white;
+    text-align: center;
+}
+
+.add_to_cart_but svg
+{
+    transform: scale(80%);
+}
+
 .title,
-.pic_au {
+.pic_au, .how_many {
     text-align: left;
     font-size: 14px;
     color: #ffffff;

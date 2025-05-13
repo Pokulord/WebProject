@@ -110,7 +110,9 @@ function Gallery() {
                                 slug={item.Pic_slug}
                                 discount={item.Pic_discount}
                                 final_price={item.final_price}
-                                orig_price={item.Pic_price} />
+                                orig_price={item.Pic_price}
+                                forsell
+                                how_many={item.How_many} />
                         </div>
                     ))}
                 </div>
@@ -125,7 +127,9 @@ function Gallery() {
                                 slug={item.Pic_slug}
                                 discount={item.Pic_discount}
                                 final_price={item.final_price}
-                                orig_price={item.Pic_price} />
+                                orig_price={item.Pic_price}
+                                how_many = {item.How_many}
+                                forsell />
                         </div>
                     ))}
                 </div>
