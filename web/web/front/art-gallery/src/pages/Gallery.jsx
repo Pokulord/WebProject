@@ -30,6 +30,8 @@ function Gallery() {
         'http://127.0.0.1:8000/api/pics/ready/'
     ];
 
+    const token = localStorage.getItem("accessToken");
+
     const fetchData = async () => {
         try {
             const [response1,response2] = await Promise.all(API_URLS.map(url => fetch(url)));
@@ -113,7 +115,8 @@ function Gallery() {
                                 final_price={item.final_price}
                                 orig_price={item.Pic_price}
                                 forsell
-                                how_many={item.How_many} />
+                                how_many={item.How_many}
+                                token = {token} />
                         </div>
                     ))}
                 </div>

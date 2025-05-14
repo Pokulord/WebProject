@@ -1,0 +1,81 @@
+.productPage {
+    max-width: 900px; /* Максимальная ширина страницы */
+    margin: 40px auto; /* Центрирование страницы */
+    padding: 30px; /* Внутренние отступы */
+    border-radius: 10px; /* Закругленные углы */
+    background-color: #f9f9f9; /* Светлый фон */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Тень */
+}
+
+.productImage {
+    width: 100%; /* Ширина изображения 100% */
+    height: auto; /* Автоматическая высота */
+    border-radius: 10px; /* Закругленные углы для изображения */
+    margin-bottom: 20px; /* Отступ снизу */
+}
+
+.productName {
+    font-size: 2.5rem; /* Размер шрифта для названия */
+    margin: 0; /* Убираем отступы */
+    color: #333; /* Цвет текста */
+    font-weight: 600; /* Полужирный шрифт */
+}
+
+.productAuthor {
+    font-size: 1.2rem; /* Размер шрифта для автора */
+    color: #555; /* Цвет текста для автора */
+    margin: 10px 0; /* Отступы сверху и снизу */
+}
+
+.productDescription {
+    font-size: 1.1rem; /* Размер шрифта для описания */
+    color: #666; /* Цвет текста для описания */
+    margin: 20px 0; /* Отступы сверху и снизу */
+    line-height: 1.6; /* Высота строки для лучшей читаемости */
+}
+
+.priceBlock {
+    display: flex; /* Используем flexbox для выравнивания */
+    align-items: center; /* Вертикальное выравнивание по центру */
+    margin: 20px 0; /* Отступы сверху и снизу */
+}
+
+.finalPrice {
+    font-size: 2rem; /* Размер шрифта для финальной цены */
+    color: #e74c3c; /* Цвет для финальной цены */
+    font-weight: bold; /* Жирный шрифт */
+    margin-right: 15px; /* Отступ справа */
+}
+
+.oldPrice {
+    font-size: 1.2rem; /* Размер шрифта для старой цены */
+    text-decoration: line-through; /* Зачеркнутая цена */
+    color: #999; /* Цвет для старой цены */
+    margin-right: 15px; /* Отступ справа */
+}
+
+.discount {
+    font-size: 1.2rem; /* Размер шрифта для скидки */
+    color: #27ae60; /* Цвет для скидки */
+    font-weight: bold; /* Жирный шрифт */
+}
+
+.addToCartButton {
+    background-color: #3498db; /* Цвет фона кнопки */
+    color: white; /* Цвет текста кнопки */
+    border: none; /* Убираем рамку */
+    border-radius: 5px; /* Закругленные углы */
+    padding: 12px 25px; /* Внутренние отступы */
+    font-size: 1.1rem; /* Размер шрифта для кнопки */
+    cursor: pointer; /* Курсор в виде указателя */
+    transition: background-color 0.3s, transform 0.2s; /* Плавный переход цвета фона и эффекта нажатия */
+}
+
+.addToCartButton:hover {
+    background-color: #2980b9; /* Цвет фона при наведении */
+    transform: translateY(-2px); /* Эффект поднятия кнопки при наведении */
+}
+
+.addToCartButton:active {
+    transform: translateY(0); /* Возвращаем кнопку на место при нажатии */
+}

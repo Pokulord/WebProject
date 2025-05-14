@@ -7,6 +7,7 @@ import AuthNav from '../src/layout/AuthNav';
 import Gallery from './pages/Gallery';
 import Support from './pages/Support';
 import Register from './pages/Register';
+import ProductDetail from './pages/ProductDetail';
 import End from './pages/End';
 import Login from './pages/Login';
 import { useState, useEffect } from 'react';
@@ -52,13 +53,14 @@ function App() {
   return (
     <>
       <Scroll />
-      {/* {isLoggedIn ? (
+      {isLoggedIn ? (
         <AuthNav username={username} />
       ) :
-        (<HomeNav />)} */}
-        <AuthNav />
-        <HomeNav />
+        (<HomeNav />)}
+        {/* <AuthNav />
+        <HomeNav /> */}
       <Routes>
+        <Route path ="/gallery/:slug" element = {<ProductDetail/>} />
         <Route path="/" element={<Main />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/support" element={<Support />} />

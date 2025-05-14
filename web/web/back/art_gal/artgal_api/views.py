@@ -26,6 +26,12 @@ class Pic_detail(generics.RetrieveDestroyAPIView):
     queryset = Pic_post.objects.all()
     serializer_class = Pic_Serializer
 
+
+class Pic_slug_detail(generics.RetrieveDestroyAPIView):
+    queryset = Pic_post.objects.all()
+    serializer_class = Pic_Serializer
+    lookup_field = 'Pic_slug'
+
 # Вывод всех картин со скидкой
 class All_discount_pics(generics.ListAPIView):
     queryset = Pic_post.objects.filter(Pic_discount__gt= 0 , How_many__gt =0)
