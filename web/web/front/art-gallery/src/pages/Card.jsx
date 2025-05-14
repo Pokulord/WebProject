@@ -2,7 +2,7 @@ import React from "react";
 import style from './Card.module.css';
 import { useState } from "react";
 
-function Card({ img, author, name, slug, discount, final_price, orig_price, imgSize = 'md', how_many, forsell }) {
+function Card({ id, img, author, name, slug, discount, final_price, orig_price, imgSize = 'md', how_many, forsell }) {
     console.log('GOT')
     if (!name) {
         return (
@@ -24,6 +24,7 @@ function Card({ img, author, name, slug, discount, final_price, orig_price, imgS
 
     function addToCart() {
         const product = {
+            id,
             img,
             author,
             name,
@@ -75,7 +76,7 @@ function Card({ img, author, name, slug, discount, final_price, orig_price, imgS
                     </div>
                     {forsell && (
                         <>
-                            <span className={style.how_many}>В наличии</span>
+                            <span className={style.how_many}>В наличии : {how_many}</span>
                             <div className={style.order_sect}>
                                 <button className={style.pic_minus_button} onClick={decrement}>-</button>
                                 <input type="text" className={style.pic_count_input} value={counter} name="pic__order_count" />

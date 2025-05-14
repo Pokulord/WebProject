@@ -104,6 +104,7 @@ function Gallery() {
                     {data.map((item) => (
                         <div key={item.Pic_ID} className={style.Card}>
                             <Card
+                                id = {item.Pic_ID}
                                 img={item.Pic_image}
                                 author={item.pic_au_name}
                                 name={item.Pic_name}
@@ -121,6 +122,7 @@ function Gallery() {
                     {readydata.map((item) => (
                         <div key={item.Pic_ID} className={style.Card}>
                             <Card
+                                id = {item.Pic_ID}
                                 img={item.Pic_image}
                                 author={item.pic_au_name}
                                 name={item.Pic_name}

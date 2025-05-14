@@ -52,12 +52,12 @@ function App() {
   return (
     <>
       <Scroll />
-      {isLoggedIn ? (
+      {/* {isLoggedIn ? (
         <AuthNav username={username} />
       ) :
-        (<HomeNav />)}
-        {/* <AuthNav />
-        <HomeNav /> */}
+        (<HomeNav />)} */}
+        <AuthNav />
+        <HomeNav />
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/gallery" element={<Gallery />} />

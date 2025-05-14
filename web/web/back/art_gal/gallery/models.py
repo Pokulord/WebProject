@@ -69,6 +69,14 @@ class Pic_post(models.Model):
        fin_price =  int(self.Pic_price * (100 - self.Pic_discount) / 100) 
        return fin_price
     
+    # def save(self, *args, **kwargs):
+    #     super().save(*args, **kwargs)
+
+    #     default_genre = Genres.objects.filter(genre_name = "Неизвестный жанр" )
+
+    #     if default_genre:
+    #         self.Pic_genre.add(default_genre)
+    
 
 class Sold_pics(models.Model):
     Sold_id = models.AutoField(primary_key=True)

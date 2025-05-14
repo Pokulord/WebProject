@@ -98,8 +98,10 @@ class Sell_pic(generics.UpdateAPIView):
     def patch(self, request, *args , **kwargs):
         instance = self.get_object()
 
-        if instance.How_many > 0:
-            instance.How_many -= 1
+        how_minus = int(request.data.get('howminus', 0))
+        if instance.How_many - how_minus > 0:
+            print(how_minus)
+            instance.How_many -= how_minus
             instance.save()
 
 
@@ -110,6 +112,10 @@ class Sell_pic(generics.UpdateAPIView):
                 Sold_price = sold_price
             )
 
-        serializer = self.get_serializer(instance)
-        return Response(serializer.data, status= status.HTTP_200_OK)
+            serializer = self.get_serializer(instance)
+            return Response(serializer.data, status= status.HTTP_200_OK)
+        else:
+            return Response(
+                {"error" : "Недостаточно товара для продажи"} , status= status.HTTP_400_BAD_REQUEST
+            )
 
