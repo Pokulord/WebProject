@@ -1,0 +1,90 @@
+.cartOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7); /* Полупрозрачный фон */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Убедитесь, что корзина поверх других элементов */
+}
+
+.cartContainer {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px; /* Ширина корзины */
+    max-height: 80%; /* Ограничение высоты */
+    overflow-y: auto; /* Прокрутка, если содержимое превышает высоту */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Тень для эффекта поднятия */
+}
+
+.cartContainer h2 {
+    margin: 0 0 20px; /* Отступы для заголовка */
+    font-size: 24px; /* Размер шрифта заголовка */
+    color: #333; /* Цвет текста заголовка */
+}
+
+.cartItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px; /* Отступ между элементами */
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0; /* Линия разделения между элементами */
+}
+
+.cartItem:last-child {
+    border-bottom: none; /* Убираем линию у последнего элемента */
+}
+
+.cartImage {
+    width: 60px; /* Ширина изображения */
+    height: 60px; /* Высота изображения */
+    border-radius: 4px; /* Закругленные углы */
+    margin-right: 15px; /* Отступ справа от изображения */
+}
+
+.cartDetails {
+    flex-grow: 1; /* Занимает оставшееся пространство */
+}
+
+.cartDetails h3 {
+    margin: 0; /* Убираем отступы */
+    font-size: 18px; /* Размер шрифта для названия товара */
+    color: #333; /* Цвет текста названия товара */
+}
+
+.cartDetails p {
+    margin: 5px 0; /* Отступы для параграфов */
+    color: #666; /* Цвет текста для описания */
+}
+
+.closeButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #007bff; /* Цвет фона кнопки */
+    color: white; /* Цвет текста кнопки */
+    border: none; /* Убираем рамку */
+    border-radius: 5px; /* Закругленные углы */
+    cursor: pointer; /* Указатель при наведении */
+    transition: background 0.3s; /* Плавный переход цвета фона */
+}
+
+
+.clearCartBut
+{
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #ff9500; /* Цвет фона кнопки */
+    color: white; /* Цвет текста кнопки */
+    border: none; /* Убираем рамку */
+    border-radius: 5px; /* Закругленные углы */
+    cursor: pointer; /* Указатель при наведении */
+    transition: background 0.3s; /* Плавный переход цвета фона */
+}
+
+.closeButton:hover {
+    background: #0056b3; /* Цвет фона при наведении */
+}

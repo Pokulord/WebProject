@@ -56,6 +56,8 @@ function App() {
         <AuthNav username={username} />
       ) :
         (<HomeNav />)}
+        {/* <AuthNav />
+        <HomeNav /> */}
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/gallery" element={<Gallery />} />

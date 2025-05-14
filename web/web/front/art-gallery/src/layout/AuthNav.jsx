@@ -7,11 +7,15 @@ import search from '../svg/Search.svg';
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { ReactComponent as ArrowIcon } from '../svg/arr.svg';
+import cart_icon from '../svg/Vector.png';
+import CartTab from "./CartTab";
 
 
 function AuthNav({ username }) {
     const [menuOpen, setMenuOpen] = useState(false);
     const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+    const [cartOpen, setCartOpen] = useState(false);
+    const [cartItems, setCartItems] = useState([])
 
     useEffect(() => {
         const handleResize = () => {
@@ -21,6 +25,16 @@ function AuthNav({ username }) {
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, []);
+
+
+    useEffect(() => {
+        const storedCart = localStorage.getItem('cart');
+        if (storedCart)
+        {
+            setCartItems(JSON.parse(storedCart));
+        }
+    }, [])
+
     const handleLogout = async () => {
         try {
             const refreshToken = localStorage.getItem("refreshToken");
@@ -30,6 +44,7 @@ function AuthNav({ username }) {
                 await axios.post("http://localhost:8000/api/user/logout/", { "refresh": refreshToken }, {headers : {"Authorization": `Bearer ${token}`}})
                 localStorage.removeItem("accessToken");
                 localStorage.removeItem("refreshToken");
+                localStorage.removeItem('cart');
                 window.location.assign("http://localhost:3000/")
             }
         }
@@ -70,10 +85,14 @@ function AuthNav({ username }) {
                         </div>
                         <Link to="/login"><img className={style.svg} src={vector} /></Link>
                         <span className={style.username}>{username}</span>
+                        <button style={{background : "transparent" , border : "none"}} onClick={() => setCartOpen(!cartOpen)}>
+                            <img src={cart_icon} className={style.svg} alt="" />
+                        </button>
                         <button onClick={handleLogout} className={style.logout}>Выйти</button>
                     </div>
                 </div>
             </nav>
+            {cartOpen && <CartTab items={cartItems} onClose={() =>  setCartOpen(false)} />}
         </header>
     );
 }
